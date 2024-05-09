@@ -1,0 +1,33 @@
+name: golangci-lint
+on:
+  push:
+    paths:
+      - ".golangci.yml"
+      - ".github/workflows/golangci.yml"
+      - "**.go"
+      - "go.mod"
+      - "go.sum"
+  pull_request:
+
+jobs:
+  lint:
+    name: Run GolangCI
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version:
+          - { version: 1.13 }
+          - { version: 1.22 }
+          - { version: stable }
+          
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Go SDK
+        uses: actions/setup-go@v5
+        with:
+          go-version: "${{ matrix.go-version.version }}"
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: latest
