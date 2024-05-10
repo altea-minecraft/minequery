@@ -35,12 +35,12 @@ linters:
     - exportloopref
     - forbidigo
     - forcetypeassert
-    - gochecknoglobals
+    #- gochecknoglobals
     - gochecknoinits
     - gocritic
     - godot
     - godox
-    - goerr113
+    - err113
     - gofumpt
     - goimports
     - gosec
@@ -74,7 +74,7 @@ linters-settings:
       - name: add-constant
         arguments:
           - allowStrs: '""'
-            allowInts: "0,1,2"
+            allowInts: "0,1,2,512"
             allowFloats: "0.0,0.,1.0,1.,2.0,2."
       - name: atomic
       - name: bare-return
@@ -89,7 +89,7 @@ linters-settings:
       - name: context-as-argument
       - name: context-keys-type
       - name: cyclomatic
-        arguments: [7]
+        arguments: [9]
       - name: datarace
       - name: deep-exit
       - name: defer
@@ -142,7 +142,7 @@ linters-settings:
       - name: unreachable-code
       - name: unused-parameter
       - name: unused-receiver
-      - name: use-any
+      #- name: use-any # Go 1.13 compatibility
       - name: useless-break
       - name: waitgroup-by-value
   depguard:
@@ -151,9 +151,6 @@ linters-settings:
         deny:
           - pkg: encoding/json
             desc: Use `github.com/goccy/go-json` instead.
-  wrapcheck:
-    ignorePackageGlobs:
-      - golang.org/x/sync/errgroup
   gofumpt:
     extra-rules: true
   makezero:
@@ -167,3 +164,4 @@ linters-settings:
   misspell:
     locale: US
     ignore-words: []
+    

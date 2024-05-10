@@ -2,6 +2,8 @@ package minequery
 
 import (
 	"bytes"
+	"errors"
+	"fmt"
 	"io"
 
 	"golang.org/x/text/encoding/unicode"
@@ -20,17 +22,18 @@ func readAllUntilZero(reader io.ByteReader) ([]byte, error) {
 	for {
 		b, err := reader.ReadByte()
 		if err != nil {
-			if err == io.EOF {
+			if errors.Is(err, io.EOF) {
 				return buf.Bytes(), nil
 			}
-			return nil, err
+
+			return nil, fmt.Errorf("failed to read byte: %w", err)
 		}
 
-		if b != 0 {
-			buf.WriteByte(b)
-		} else {
+		if b == 0 {
 			return buf.Bytes(), nil
 		}
+
+		_ = buf.WriteByte(b)
 	}
 }
 
@@ -38,13 +41,16 @@ func readAllUntilZero(reader io.ByteReader) ([]byte, error) {
 // This is a backport from newer Go stdlib for sake of minequery's compatibility with Go 1.13.
 func readAll(r io.Reader) ([]byte, error) {
 	b := make([]byte, 0, 512)
+
 	for {
 		n, err := r.Read(b[len(b):cap(b)])
 		b = b[:len(b)+n]
+
 		if err != nil {
 			if err == io.EOF {
 				err = nil
 			}
+
 			return b, err
 		}
 
