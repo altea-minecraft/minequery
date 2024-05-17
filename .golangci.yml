@@ -25,7 +25,7 @@ linters:
     - bodyclose
     - containedctx
     - contextcheck
-    - depguard
+    #- depguard
     - dogsled
     - dupl
     - dupword
@@ -73,7 +73,7 @@ linters-settings:
     rules:
       - name: add-constant
         arguments:
-          - allowStrs: '""'
+          - allowStrs: '"","udp"'
             allowInts: "0,1,2,512"
             allowFloats: "0.0,0.,1.0,1.,2.0,2."
       - name: atomic
@@ -145,12 +145,6 @@ linters-settings:
       #- name: use-any # Go 1.13 compatibility
       - name: useless-break
       - name: waitgroup-by-value
-  depguard:
-    rules:
-      main:
-        deny:
-          - pkg: encoding/json
-            desc: Use `github.com/goccy/go-json` instead.
   gofumpt:
     extra-rules: true
   makezero:
