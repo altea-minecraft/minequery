@@ -1,3 +1,5 @@
+// Package minequery provides functions and structs for performing Server List Ping and Query (both simple and full)
+// on Minecraft servers.
 package minequery
 
 import (
