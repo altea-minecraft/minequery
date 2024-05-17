@@ -26,199 +26,199 @@ const Ping17ProtocolVersionUndefined int32 = -1
 
 //goland:noinspection GoUnusedConst
 const (
-	// Ping17ProtocolVersion1202 holds a protocol version (=764) for Minecraft 1.20.2
+	// Ping17ProtocolVersion1202 holds a protocol version (=764) for Minecraft 1.20.2.
 	Ping17ProtocolVersion1202 int32 = 764
 
-	// Ping17ProtocolVersion1202rc2 holds a protocol version (=1073741977) for Minecraft 1.20.2-rc2
+	// Ping17ProtocolVersion1202rc2 holds a protocol version (=1073741977) for Minecraft 1.20.2-rc2.
 	Ping17ProtocolVersion1202rc2 int32 = 1073741977
 
-	// Ping17ProtocolVersion1202rc1 holds a protocol version (=1073741976) for Minecraft 1.20.2-rc1
+	// Ping17ProtocolVersion1202rc1 holds a protocol version (=1073741976) for Minecraft 1.20.2-rc1.
 	Ping17ProtocolVersion1202rc1 int32 = 1073741976
 
-	// Ping17ProtocolVersion1202pre4 holds a protocol version (=1073741975) for Minecraft 1.20.2-pre4
+	// Ping17ProtocolVersion1202pre4 holds a protocol version (=1073741975) for Minecraft 1.20.2-pre4.
 	Ping17ProtocolVersion1202pre4 int32 = 1073741975
 
-	// Ping17ProtocolVersion1202pre3 holds a protocol version (=1073741974) for Minecraft 1.20.2-pre3
+	// Ping17ProtocolVersion1202pre3 holds a protocol version (=1073741974) for Minecraft 1.20.2-pre3.
 	Ping17ProtocolVersion1202pre3 int32 = 1073741974
 
-	// Ping17ProtocolVersion1202pre2 holds a protocol version (=1073741973) for Minecraft 1.20.2-pre2
+	// Ping17ProtocolVersion1202pre2 holds a protocol version (=1073741973) for Minecraft 1.20.2-pre2.
 	Ping17ProtocolVersion1202pre2 int32 = 1073741973
 
-	// Ping17ProtocolVersion1202pre1 holds a protocol version (=1073741972) for Minecraft 1.20.2-pre1
+	// Ping17ProtocolVersion1202pre1 holds a protocol version (=1073741972) for Minecraft 1.20.2-pre1.
 	Ping17ProtocolVersion1202pre1 int32 = 1073741972
 
-	// Ping17ProtocolVersion23w35a holds a protocol version (=1073741971) for Minecraft 23w35a
+	// Ping17ProtocolVersion23w35a holds a protocol version (=1073741971) for Minecraft 23w35a.
 	Ping17ProtocolVersion23w35a int32 = 1073741971
 
-	// Ping17ProtocolVersion23w33a holds a protocol version (=1073741970) for Minecraft 23w33a
+	// Ping17ProtocolVersion23w33a holds a protocol version (=1073741970) for Minecraft 23w33a.
 	Ping17ProtocolVersion23w33a int32 = 1073741970
 
-	// Ping17ProtocolVersion23w32a holds a protocol version (=1073741969) for Minecraft 23w32a
+	// Ping17ProtocolVersion23w32a holds a protocol version (=1073741969) for Minecraft 23w32a.
 	Ping17ProtocolVersion23w32a int32 = 1073741969
 
-	// Ping17ProtocolVersion23w31a holds a protocol version (=1073741968) for Minecraft 23w31a
+	// Ping17ProtocolVersion23w31a holds a protocol version (=1073741968) for Minecraft 23w31a.
 	Ping17ProtocolVersion23w31a int32 = 1073741968
 
-	// Ping17ProtocolVersion1201 holds a protocol version (=763) for Minecraft 1.20.1
+	// Ping17ProtocolVersion1201 holds a protocol version (=763) for Minecraft 1.20.1.
 	Ping17ProtocolVersion1201 int32 = 763
 
-	// Ping17ProtocolVersion1201rc1 holds a protocol version (=1073741966) for Minecraft 1.20.1-rc1
+	// Ping17ProtocolVersion1201rc1 holds a protocol version (=1073741966) for Minecraft 1.20.1-rc1.
 	Ping17ProtocolVersion1201rc1 int32 = 1073741966
 
-	// Ping17ProtocolVersion120 holds a protocol version (=763) for Minecraft 1.20
+	// Ping17ProtocolVersion120 holds a protocol version (=763) for Minecraft 1.20.
 	Ping17ProtocolVersion120 int32 = 763
 
-	// Ping17ProtocolVersion120rc1 holds a protocol version (=1073741965) for Minecraft 1.20-rc1
+	// Ping17ProtocolVersion120rc1 holds a protocol version (=1073741965) for Minecraft 1.20-rc1.
 	Ping17ProtocolVersion120rc1 int32 = 1073741965
 
-	// Ping17ProtocolVersion120pre7 holds a protocol version (=1073741964) for Minecraft 1.20-pre7
+	// Ping17ProtocolVersion120pre7 holds a protocol version (=1073741964) for Minecraft 1.20-pre7.
 	Ping17ProtocolVersion120pre7 int32 = 1073741964
 
-	// Ping17ProtocolVersion120pre6 holds a protocol version (=1073741963) for Minecraft 1.20-pre6
+	// Ping17ProtocolVersion120pre6 holds a protocol version (=1073741963) for Minecraft 1.20-pre6.
 	Ping17ProtocolVersion120pre6 int32 = 1073741963
 
-	// Ping17ProtocolVersion120pre5 holds a protocol version (=1073741962) for Minecraft 1.20-pre5
+	// Ping17ProtocolVersion120pre5 holds a protocol version (=1073741962) for Minecraft 1.20-pre5.
 	Ping17ProtocolVersion120pre5 int32 = 1073741962
 
-	// Ping17ProtocolVersion120pre4 holds a protocol version (=1073741961) for Minecraft 1.20-pre4
+	// Ping17ProtocolVersion120pre4 holds a protocol version (=1073741961) for Minecraft 1.20-pre4.
 	Ping17ProtocolVersion120pre4 int32 = 1073741961
 
-	// Ping17ProtocolVersion120pre3 holds a protocol version (=1073741960) for Minecraft 1.20-pre3
+	// Ping17ProtocolVersion120pre3 holds a protocol version (=1073741960) for Minecraft 1.20-pre3.
 	Ping17ProtocolVersion120pre3 int32 = 1073741960
 
-	// Ping17ProtocolVersion120pre2 holds a protocol version (=1073741959) for Minecraft 1.20-pre2
+	// Ping17ProtocolVersion120pre2 holds a protocol version (=1073741959) for Minecraft 1.20-pre2.
 	Ping17ProtocolVersion120pre2 int32 = 1073741959
 
-	// Ping17ProtocolVersion120pre1 holds a protocol version (=1073741958) for Minecraft 1.20-pre1
+	// Ping17ProtocolVersion120pre1 holds a protocol version (=1073741958) for Minecraft 1.20-pre1.
 	Ping17ProtocolVersion120pre1 int32 = 1073741958
 
-	// Ping17ProtocolVersion23w18a holds a protocol version (=1073741957) for Minecraft 23w18a
+	// Ping17ProtocolVersion23w18a holds a protocol version (=1073741957) for Minecraft 23w18a.
 	Ping17ProtocolVersion23w18a int32 = 1073741957
 
-	// Ping17ProtocolVersion23w17a holds a protocol version (=1073741956) for Minecraft 23w17a
+	// Ping17ProtocolVersion23w17a holds a protocol version (=1073741956) for Minecraft 23w17a.
 	Ping17ProtocolVersion23w17a int32 = 1073741956
 
-	// Ping17ProtocolVersion23w16a holds a protocol version (=1073741955) for Minecraft 23w16a
+	// Ping17ProtocolVersion23w16a holds a protocol version (=1073741955) for Minecraft 23w16a.
 	Ping17ProtocolVersion23w16a int32 = 1073741955
 
-	// Ping17ProtocolVersion23w14a holds a protocol version (=1073741954) for Minecraft 23w14a
+	// Ping17ProtocolVersion23w14a holds a protocol version (=1073741954) for Minecraft 23w14a.
 	Ping17ProtocolVersion23w14a int32 = 1073741954
 
-	// Ping17ProtocolVersion23w13a holds a protocol version (=1073741952) for Minecraft 23w13a
+	// Ping17ProtocolVersion23w13a holds a protocol version (=1073741952) for Minecraft 23w13a.
 	Ping17ProtocolVersion23w13a int32 = 1073741952
 
-	// Ping17ProtocolVersion23w12a holds a protocol version (=1073741951) for Minecraft 23w12a
+	// Ping17ProtocolVersion23w12a holds a protocol version (=1073741951) for Minecraft 23w12a.
 	Ping17ProtocolVersion23w12a int32 = 1073741951
 
-	// Ping17ProtocolVersion1194 holds a protocol version (=762) for Minecraft 1.19.4
+	// Ping17ProtocolVersion1194 holds a protocol version (=762) for Minecraft 1.19.4.
 	Ping17ProtocolVersion1194 int32 = 762
 
-	// Ping17ProtocolVersion1194rc3 holds a protocol version (=1073741950) for Minecraft 1.19.4-rc3
+	// Ping17ProtocolVersion1194rc3 holds a protocol version (=1073741950) for Minecraft 1.19.4-rc3.
 	Ping17ProtocolVersion1194rc3 int32 = 1073741950
 
-	// Ping17ProtocolVersion1194rc2 holds a protocol version (=1073741949) for Minecraft 1.19.4-rc2
+	// Ping17ProtocolVersion1194rc2 holds a protocol version (=1073741949) for Minecraft 1.19.4-rc2.
 	Ping17ProtocolVersion1194rc2 int32 = 1073741949
 
-	// Ping17ProtocolVersion1194rc1 holds a protocol version (=1073741948) for Minecraft 1.19.4-rc1
+	// Ping17ProtocolVersion1194rc1 holds a protocol version (=1073741948) for Minecraft 1.19.4-rc1.
 	Ping17ProtocolVersion1194rc1 int32 = 1073741948
 
-	// Ping17ProtocolVersion1194pre4 holds a protocol version (=1073741947) for Minecraft 1.19.4-pre4
+	// Ping17ProtocolVersion1194pre4 holds a protocol version (=1073741947) for Minecraft 1.19.4-pre4.
 	Ping17ProtocolVersion1194pre4 int32 = 1073741947
 
-	// Ping17ProtocolVersion1194pre3 holds a protocol version (=1073741946) for Minecraft 1.19.4-pre3
+	// Ping17ProtocolVersion1194pre3 holds a protocol version (=1073741946) for Minecraft 1.19.4-pre3.
 	Ping17ProtocolVersion1194pre3 int32 = 1073741946
 
-	// Ping17ProtocolVersion1194pre2 holds a protocol version (=1073741945) for Minecraft 1.19.4-pre2
+	// Ping17ProtocolVersion1194pre2 holds a protocol version (=1073741945) for Minecraft 1.19.4-pre2.
 	Ping17ProtocolVersion1194pre2 int32 = 1073741945
 
-	// Ping17ProtocolVersion1194pre1 holds a protocol version (=1073741944) for Minecraft 1.19.4-pre1
+	// Ping17ProtocolVersion1194pre1 holds a protocol version (=1073741944) for Minecraft 1.19.4-pre1.
 	Ping17ProtocolVersion1194pre1 int32 = 1073741944
 
-	// Ping17ProtocolVersion23w07a holds a protocol version (=1073741943) for Minecraft 23w07a
+	// Ping17ProtocolVersion23w07a holds a protocol version (=1073741943) for Minecraft 23w07a.
 	Ping17ProtocolVersion23w07a int32 = 1073741943
 
-	// Ping17ProtocolVersion23w06a holds a protocol version (=1073741942) for Minecraft 23w06a
+	// Ping17ProtocolVersion23w06a holds a protocol version (=1073741942) for Minecraft 23w06a.
 	Ping17ProtocolVersion23w06a int32 = 1073741942
 
-	// Ping17ProtocolVersion23w05a holds a protocol version (=1073741941) for Minecraft 23w05a
+	// Ping17ProtocolVersion23w05a holds a protocol version (=1073741941) for Minecraft 23w05a.
 	Ping17ProtocolVersion23w05a int32 = 1073741941
 
-	// Ping17ProtocolVersion23w04a holds a protocol version (=1073741940) for Minecraft 23w04a
+	// Ping17ProtocolVersion23w04a holds a protocol version (=1073741940) for Minecraft 23w04a.
 	Ping17ProtocolVersion23w04a int32 = 1073741940
 
-	// Ping17ProtocolVersion23w03a holds a protocol version (=1073741939) for Minecraft 23w03a
+	// Ping17ProtocolVersion23w03a holds a protocol version (=1073741939) for Minecraft 23w03a.
 	Ping17ProtocolVersion23w03a int32 = 1073741939
 
-	// Ping17ProtocolVersion1193 holds a protocol version (=761) for Minecraft 1.19.3
+	// Ping17ProtocolVersion1193 holds a protocol version (=761) for Minecraft 1.19.3.
 	Ping17ProtocolVersion1193 int32 = 761
 
-	// Ping17ProtocolVersion1193rc3 holds a protocol version (=1073741938) for Minecraft 1.19.3-rc3
+	// Ping17ProtocolVersion1193rc3 holds a protocol version (=1073741938) for Minecraft 1.19.3-rc3.
 	Ping17ProtocolVersion1193rc3 int32 = 1073741938
 
-	// Ping17ProtocolVersion1193rc2 holds a protocol version (=1073741937) for Minecraft 1.19.3-rc2
+	// Ping17ProtocolVersion1193rc2 holds a protocol version (=1073741937) for Minecraft 1.19.3-rc2.
 	Ping17ProtocolVersion1193rc2 int32 = 1073741937
 
-	// Ping17ProtocolVersion1193rc1 holds a protocol version (=1073741936) for Minecraft 1.19.3-rc1
+	// Ping17ProtocolVersion1193rc1 holds a protocol version (=1073741936) for Minecraft 1.19.3-rc1.
 	Ping17ProtocolVersion1193rc1 int32 = 1073741936
 
-	// Ping17ProtocolVersion1193pre3 holds a protocol version (=1073741935) for Minecraft 1.19.3-pre3
+	// Ping17ProtocolVersion1193pre3 holds a protocol version (=1073741935) for Minecraft 1.19.3-pre3.
 	Ping17ProtocolVersion1193pre3 int32 = 1073741935
 
-	// Ping17ProtocolVersion1193pre2 holds a protocol version (=1073741934) for Minecraft 1.19.3-pre2
+	// Ping17ProtocolVersion1193pre2 holds a protocol version (=1073741934) for Minecraft 1.19.3-pre2.
 	Ping17ProtocolVersion1193pre2 int32 = 1073741934
 
-	// Ping17ProtocolVersion1193pre1 holds a protocol version (=1073741933) for Minecraft 1.19.3-pre1
+	// Ping17ProtocolVersion1193pre1 holds a protocol version (=1073741933) for Minecraft 1.19.3-pre1.
 	Ping17ProtocolVersion1193pre1 int32 = 1073741933
 
-	// Ping17ProtocolVersion22w46a holds a protocol version (=1073741932) for Minecraft 22w46a
+	// Ping17ProtocolVersion22w46a holds a protocol version (=1073741932) for Minecraft 22w46a.
 	Ping17ProtocolVersion22w46a int32 = 1073741932
 
-	// Ping17ProtocolVersion22w45a holds a protocol version (=1073741931) for Minecraft 22w45a
+	// Ping17ProtocolVersion22w45a holds a protocol version (=1073741931) for Minecraft 22w45a.
 	Ping17ProtocolVersion22w45a int32 = 1073741931
 
-	// Ping17ProtocolVersion22w44a holds a protocol version (=1073741930) for Minecraft 22w44a
+	// Ping17ProtocolVersion22w44a holds a protocol version (=1073741930) for Minecraft 22w44a.
 	Ping17ProtocolVersion22w44a int32 = 1073741930
 
-	// Ping17ProtocolVersion22w43a holds a protocol version (=1073741929) for Minecraft 22w43a
+	// Ping17ProtocolVersion22w43a holds a protocol version (=1073741929) for Minecraft 22w43a.
 	Ping17ProtocolVersion22w43a int32 = 1073741929
 
-	// Ping17ProtocolVersion22w42a holds a protocol version (=1073741928) for Minecraft 22w42a
+	// Ping17ProtocolVersion22w42a holds a protocol version (=1073741928) for Minecraft 22w42a.
 	Ping17ProtocolVersion22w42a int32 = 1073741928
 
-	// Ping17ProtocolVersion1192 holds a protocol version (=760) for Minecraft 1.19.2
+	// Ping17ProtocolVersion1192 holds a protocol version (=760) for Minecraft 1.19.2.
 	Ping17ProtocolVersion1192 int32 = 760
 
-	// Ping17ProtocolVersion1192rc2 holds a protocol version (=1073741927) for Minecraft 1.19.2-rc2
+	// Ping17ProtocolVersion1192rc2 holds a protocol version (=1073741927) for Minecraft 1.19.2-rc2.
 	Ping17ProtocolVersion1192rc2 int32 = 1073741927
 
-	// Ping17ProtocolVersion1192rc1 holds a protocol version (=1073741926) for Minecraft 1.19.2-rc1
+	// Ping17ProtocolVersion1192rc1 holds a protocol version (=1073741926) for Minecraft 1.19.2-rc1.
 	Ping17ProtocolVersion1192rc1 int32 = 1073741926
 
-	// Ping17ProtocolVersion1191 holds a protocol version (=760) for Minecraft 1.19.1
+	// Ping17ProtocolVersion1191 holds a protocol version (=760) for Minecraft 1.19.1.
 	Ping17ProtocolVersion1191 int32 = 760
 
-	// Ping17ProtocolVersion1191rc3 holds a protocol version (=1073741925) for Minecraft 1.19.1-rc3
+	// Ping17ProtocolVersion1191rc3 holds a protocol version (=1073741925) for Minecraft 1.19.1-rc3.
 	Ping17ProtocolVersion1191rc3 int32 = 1073741925
 
-	// Ping17ProtocolVersion1191rc2 holds a protocol version (=1073741924) for Minecraft 1.19.1-rc2
+	// Ping17ProtocolVersion1191rc2 holds a protocol version (=1073741924) for Minecraft 1.19.1-rc2.
 	Ping17ProtocolVersion1191rc2 int32 = 1073741924
 
-	// Ping17ProtocolVersion1191pre6 holds a protocol version (=1073741923) for Minecraft 1.19.1-pre6
+	// Ping17ProtocolVersion1191pre6 holds a protocol version (=1073741923) for Minecraft 1.19.1-pre6.
 	Ping17ProtocolVersion1191pre6 int32 = 1073741923
 
-	// Ping17ProtocolVersion1191pre5 holds a protocol version (=1073741922) for Minecraft 1.19.1-pre5
+	// Ping17ProtocolVersion1191pre5 holds a protocol version (=1073741922) for Minecraft 1.19.1-pre5.
 	Ping17ProtocolVersion1191pre5 int32 = 1073741922
 
-	// Ping17ProtocolVersion1191pre4 holds a protocol version (=1073741921) for Minecraft 1.19.1-pre4
+	// Ping17ProtocolVersion1191pre4 holds a protocol version (=1073741921) for Minecraft 1.19.1-pre4.
 	Ping17ProtocolVersion1191pre4 int32 = 1073741921
 
-	// Ping17ProtocolVersion1191pre3 holds a protocol version (=1073741920) for Minecraft 1.19.1-pre3
+	// Ping17ProtocolVersion1191pre3 holds a protocol version (=1073741920) for Minecraft 1.19.1-pre3.
 	Ping17ProtocolVersion1191pre3 int32 = 1073741920
 
-	// Ping17ProtocolVersion1191pre2 holds a protocol version (=1073741919) for Minecraft 1.19.1-pre2
+	// Ping17ProtocolVersion1191pre2 holds a protocol version (=1073741919) for Minecraft 1.19.1-pre2.
 	Ping17ProtocolVersion1191pre2 int32 = 1073741919
 
-	// Ping17ProtocolVersion1191rc1 holds a protocol version (=1073741918) for Minecraft 1.19.1-rc1
+	// Ping17ProtocolVersion1191rc1 holds a protocol version (=1073741918) for Minecraft 1.19.1-rc1.
 	Ping17ProtocolVersion1191rc1 int32 = 1073741918
 
 	// Ping17ProtocolVersion1191pre1 holds a protocol version (=1073741917) for Minecraft 1.19.1-pre1.
@@ -272,7 +272,8 @@ const (
 	// Ping17ProtocolVersion22w14a holds a protocol version (=1073741902) for Minecraft 22w14a.
 	Ping17ProtocolVersion22w14a int32 = 1073741902
 
-	// Ping17ProtocolVersion22w13OneBlockAtATime holds a protocol version (=1073741901) for Minecraft 22w13oneBlockAtATime.
+	// Ping17ProtocolVersion22w13OneBlockAtATime holds a protocol version (=1073741901)
+	// for Minecraft 22Ping17ProtocolVersion22w13OneBlockAtATime.
 	Ping17ProtocolVersion22w13OneBlockAtATime int32 = 1073741901
 
 	// Ping17ProtocolVersion22w13a holds a protocol version (=1073741900) for Minecraft 22w13a.
@@ -1826,8 +1827,13 @@ type PlayerEntry17 struct {
 
 // Chat17 holds arbitrary Chat data decoded from JSON and can be converted to string
 // by decoding chat component JSON.
-type Chat17 interface{ fmt.Stringer }
-type chat17 struct{ Component interface{} }
+type Chat17 interface {
+	fmt.Stringer
+}
+
+type chat17 struct {
+	Component interface{}
+}
 
 func newChat17(component interface{}) *chat17 { return &chat17{component} }
 
@@ -1842,33 +1848,30 @@ func (c *chat17) String() string {
 		// Remove topmost element from stack and get it for processing
 		current, _ := componentStack.Pop()
 
-		switch current.(type) {
+		switch component := current.(type) {
 		case string:
 			// If component is a string, just write it to a buffer
-			buffer.WriteString(current.(string))
+			_, _ = buffer.WriteString(component)
 
 		case []interface{}:
 			// If component is a slice, push its items to stack in reverse order
 			// (so that they are processed in natural order because stack is LIFO)
-			current := current.([]interface{})
-			for i := len(current) - 1; i >= 0; i-- {
-				componentStack.Push(current[i])
+			for i := len(component) - 1; i >= 0; i-- {
+				componentStack.Push(component[i])
 			}
 
 		case map[string]interface{}:
 			// If component is an object, first its text/translate properties are handled;
 			// subcomponents (aka extra) are processed last and are appended in the end of the string.
-			current := current.(map[string]interface{})
-
 			// Push extra to stack (if there is any) first as it must be processed last (stack is LIFO)
-			if extra, ok := current["extra"]; ok {
+			if extra, ok := component["extra"]; ok {
 				componentStack.Push(extra)
 			}
 
 			// Push component text to stack (if there is any)
-			if text, ok := current["text"]; ok {
+			if text, ok := component["text"]; ok {
 				componentStack.Push(text)
-			} else if translate, ok := current["translate"]; ok {
+			} else if translate, ok := component["translate"]; ok {
 				// If component did not contain text property, look for translate property
 				// and write translate string as is, without applying "with" components or actually trying to
 				// translate anything.
@@ -1880,20 +1883,26 @@ func (c *chat17) String() string {
 	return buffer.String()
 }
 
-type status17JsonMapping struct {
-	Version struct {
-		Name     string `json:"name"`
-		Protocol int    `json:"protocol"`
-	} `json:"version"`
+type status17Version struct {
+	Name     string `json:"name"`
+	Protocol int    `json:"protocol"`
+}
 
-	Players struct {
-		Max    int `json:"max"`
-		Online int `json:"online"`
-		Sample []struct {
-			Name string `json:"name"`
-			ID   string `json:"id"`
-		} `json:"sample"`
-	} `json:"players"`
+type status17SamplePlayer struct {
+	Name string `json:"name"`
+	ID   string `json:"id"`
+}
+
+type status17PlayersData struct {
+	Max    int                    `json:"max"`
+	Online int                    `json:"online"`
+	Sample []status17SamplePlayer `json:"sample"`
+}
+
+type status17JsonMapping struct {
+	Version status17Version `json:"version"`
+
+	Players status17PlayersData `json:"players"`
 
 	Description interface{} `json:"description"`
 	Favicon     string      `json:"favicon,omitempty"`
@@ -1940,36 +1949,39 @@ func Ping17(host string, port int) (*Status17, error) {
 
 // Ping17 pings 1.7+ Minecraft servers.
 func (p *Pinger) Ping17(host string, port int) (*Status17, error) {
-	status, err := p.pingGeneric(p.ping17, host, port)
+	status, err := p.pingGeneric(p.ping17SendReceivePing, host, port)
 	if err != nil {
 		return nil, err
 	}
-	return status.(*Status17), nil
+
+	return status.(*Status17), nil //nolint:forcetypeassert
 }
 
-func (p *Pinger) ping17(host string, port int) (interface{}, error) {
+func (p *Pinger) ping17SendReceivePing(host string, port int) (interface{}, error) {
 	conn, err := p.openTCPConn(host, port)
 	if err != nil {
 		return nil, err
 	}
+
 	defer func() { _ = conn.Close() }()
 
-	// Send handshake packet
+	// Default to undefined protocol version
 	protocolVersion := p.ProtocolVersion17
 	if protocolVersion == 0 {
 		protocolVersion = Ping17ProtocolVersionUndefined
 	}
-	if err = p.ping17WriteHandshakePacket(conn, protocolVersion, host, port); err != nil {
+
+	if err = ping17WriteHandshakePacket(conn, protocolVersion, host, port); err != nil {
 		return nil, fmt.Errorf("could not write handshake packet: %w", err)
 	}
 
 	// Send status request packet
-	if err = p.ping17WriteStatusRequestPacket(conn); err != nil {
+	if err = ping17WriteStatusRequestPacket(conn); err != nil {
 		return nil, fmt.Errorf("could not write status request packet: %w", err)
 	}
 
 	// Read status response
-	payload, err := p.ping17ReadStatusResponsePacketPayload(conn)
+	payload, err := ping17ReadStatusResponsePacketPayload(conn)
 	if err != nil {
 		return nil, fmt.Errorf("could not read response packet: %w", err)
 	}
@@ -1985,13 +1997,13 @@ func (p *Pinger) ping17(host string, port int) (interface{}, error) {
 
 // Communication
 
-func (p *Pinger) ping17WritePacket(writer io.Writer, packetID uint32, payloadData []byte) error {
+func ping17WritePacket(writer io.Writer, packetID uint32, payloadData []byte) error {
 	// Allocate payload buffer of size = 5 (payload length field) + payload length
 	pb := bytes.NewBuffer(make([]byte, 0, 5+len(payloadData)))
 
 	// Write packet ID as unsigned VarInt to content buffer
-	b := make([]byte, 5)
-	pb.Write(b[:binary.PutUvarint(b, uint64(packetID))])
+	b := make([]byte, 5) //nolint:makezero,revive
+	_, _ = pb.Write(b[:binary.PutUvarint(b, uint64(packetID))])
 
 	// Copy packet data to content buffer
 	_, _ = pb.Write(payloadData)
@@ -2000,69 +2012,74 @@ func (p *Pinger) ping17WritePacket(writer io.Writer, packetID uint32, payloadDat
 	packet := bytes.NewBuffer(make([]byte, 0, 5+pb.Len()))
 
 	// Write packet data length to packet buffer unsigned VarInt
-	packet.Write(b[:binary.PutUvarint(b, uint64(pb.Len()))])
+	_, _ = packet.Write(b[:binary.PutUvarint(b, uint64(pb.Len()))])
 
 	// Write content buffer to packet buffer
 	_, _ = pb.WriteTo(packet)
 
 	_, err := packet.WriteTo(writer)
-	return err
+
+	return fmt.Errorf("failed to write packet: %w", err)
 }
 
-func (p *Pinger) ping17WriteHandshakePacket(writer io.Writer, protocol int32, host string, port int) error {
+func ping17WriteHandshakePacket(writer io.Writer, protocol int32, host string, port int) error {
 	packet := bytes.NewBuffer(make([]byte, 0, 32))
 
 	// Write protocol version as VarInt
-	b := make([]byte, 5)
-	packet.Write(b[:binary.PutVarint(b, int64(protocol))])
+	b := make([]byte, 5) //nolint:makezero,revive
+	_, _ = packet.Write(b[:binary.PutVarint(b, int64(protocol))])
 
 	// Write length of hostname string as unsigned VarInt
-	packet.Write(b[:binary.PutUvarint(b, uint64(len(host)))])
+	_, _ = packet.Write(b[:binary.PutUvarint(b, uint64(len(host)))])
 
 	// Write hostname string as byte array
-	packet.Write([]byte(host))
+	_, _ = packet.Write([]byte(host)) //nolint:mirror
 
 	// Write port as unsigned short
 	_ = binary.Write(packet, binary.BigEndian, uint16(port))
 
 	// Write next state as unsigned VarInt
-	packet.Write(b[:binary.PutUvarint(b, uint64(ping17NextStateStatus))])
+	_, _ = packet.Write(b[:binary.PutUvarint(b, uint64(ping17NextStateStatus))])
 
-	return p.ping17WritePacket(writer, ping17HandshakePacketID, packet.Bytes())
+	return ping17WritePacket(writer, ping17HandshakePacketID, packet.Bytes())
 }
 
-func (p *Pinger) ping17WriteStatusRequestPacket(writer io.Writer) error {
+func ping17WriteStatusRequestPacket(writer io.Writer) error {
 	// Write empty status request packet with only packet ID and zero length
-	return p.ping17WritePacket(writer, ping17StatusRequestPacketID, nil)
+	return ping17WritePacket(writer, ping17StatusRequestPacketID, nil)
 }
 
-func (p *Pinger) ping17ReadStatusResponsePacketPayload(reader io.Reader) ([]byte, error) {
+func ping17ReadStatusResponsePacketPayload(reader io.Reader) ([]byte, error) {
 	// Allocate buffer of 5 bytes (VarInt maximum length) and read packet length
-	lb := make([]byte, 5)
+	lb := make([]byte, 5) //nolint:makezero,revive
+
 	ln, err := reader.Read(lb)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not read status response packet: %w", err)
 	}
+
 	lr := bytes.NewReader(lb)
 
 	// Read packet length as unsigned VarInt
 	pl, err := binary.ReadUvarint(lr)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not read status response packet: %w", err)
 	}
 
 	// Read entire packet to a buffer
 	pb := bytes.NewBuffer(make([]byte, 0, pl))
-	pb.Write(lb[maxInt(ln-lr.Len(), 0):ln])
+	_, _ = pb.Write(lb[maxInt(ln-lr.Len(), 0):ln])
+
 	if _, err = io.CopyN(pb, reader, int64(pl)-int64(lr.Len())); err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not read status response packet: %w", err)
 	}
+
 	pr := bytes.NewReader(pb.Bytes())
 
 	// Read packet ID as unsigned VarInt
 	id, err := binary.ReadUvarint(pr)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not read status response packet: %w", err)
 	} else if uint32(id) != ping17StatusResponsePacketID {
 		return nil, fmt.Errorf("expected packet ID %#x, but instead got %#x", ping17StatusResponsePacketID, id)
 	}
@@ -2070,13 +2087,13 @@ func (p *Pinger) ping17ReadStatusResponsePacketPayload(reader io.Reader) ([]byte
 	// Read status payload length
 	dl, err := binary.ReadUvarint(pr)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not read status response packet: %w", err)
 	}
 
 	// Read packet payload
 	db := bytes.NewBuffer(make([]byte, 0, dl))
 	if _, err = io.CopyN(db, pr, int64(dl)); err != nil {
-		return nil, err
+		return nil, fmt.Errorf("could not read status response packet: %w", err)
 	}
 
 	return db.Bytes(), nil
@@ -2103,18 +2120,20 @@ func (p *Pinger) ping17ParseStatusResponsePayload(payload []byte) (*Status17, er
 	}
 
 	// Process players sample (optionally, if UseStrict, returning on tolerable errors)
-	status.SamplePlayers = make([]PlayerEntry17, len(statusMapping.Players.Sample))
-	for i, entry := range statusMapping.Players.Sample {
+	status.SamplePlayers = make([]PlayerEntry17, 0, len(statusMapping.Players.Sample))
+
+	for _, entry := range statusMapping.Players.Sample {
 		id, err := uuid.Parse(entry.ID)
 		if err != nil {
 			// Incorrect UUID is only critical in UseStrict mode; else just skip over it
 			if p.UseStrict {
 				return nil, fmt.Errorf("%w: invalid sample player UUID: %s", ErrInvalidStatus, err)
 			}
+
 			continue
 		}
 
-		status.SamplePlayers[i] = PlayerEntry17{entry.Name, id}
+		status.SamplePlayers = append(status.SamplePlayers, PlayerEntry17{entry.Name, id})
 	}
 
 	// Process icon (optionally, if UseStrict, returning on tolerable errors)
