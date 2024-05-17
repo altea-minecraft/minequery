@@ -74,7 +74,7 @@ linters-settings:
       - name: add-constant
         arguments:
           - allowStrs: '"","udp"'
-            allowInts: "0,1,2,512"
+            allowInts: "0,1,2,10,32,64,512"
             allowFloats: "0.0,0.,1.0,1.,2.0,2."
       - name: atomic
       - name: bare-return
