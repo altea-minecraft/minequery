@@ -11,51 +11,60 @@ import (
 func (p *Pinger) openTCPConn(host string, port int) (net.Conn, error) {
 	conn, err := p.Dialer.Dial("tcp", toAddrString(host, port))
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to open tcp connection: %w", err)
 	}
+
 	if p.Timeout != 0 {
 		if err = conn.SetDeadline(time.Now().Add(p.Timeout)); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to set connection deadline: %w", err)
 		}
 	}
+
 	return conn, nil
 }
 
 func (p *Pinger) openUDPConn(host string, port int) (*net.UDPConn, error) {
 	addr, err := net.ResolveUDPAddr("udp", toAddrString(host, port))
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to resolve UDP address: %w", err)
 	}
+
 	conn, err := net.DialUDP("udp", nil, addr)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to open UDP connection: %w", err)
 	}
+
 	if p.Timeout != 0 {
 		if err = conn.SetDeadline(time.Now().Add(p.Timeout)); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to set connection deadline: %w", err)
 		}
 	}
+
 	return conn, nil
 }
 
 func (p *Pinger) openUDPConnWithLocalAddr(host string, remotePort int, localAddr string) (*net.UDPConn, error) {
 	lAddrObj, err := net.ResolveUDPAddr("udp", localAddr)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to resolve UDP address: %w", err)
 	}
+
 	addr, err := net.ResolveUDPAddr("udp", toAddrString(host, remotePort))
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to resolve UDP address: %w", err)
 	}
+
 	conn, err := net.DialUDP("udp", lAddrObj, addr)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to open UDP connection: %w", err)
 	}
+
 	if p.Timeout != 0 {
 		if err = conn.SetDeadline(time.Now().Add(p.Timeout)); err != nil {
-			return nil, err
+			return nil, fmt.Errorf("failed to set connection deadline: %w", err)
 		}
 	}
+
 	return conn, nil
 }
 
@@ -65,7 +74,7 @@ func (p *Pinger) openUDPConnWithLocalAddr(host string, remotePort int, localAddr
 //
 // In case when there is more than one record, the hostname and port of the first record with
 // the least weight is returned.
-func (p *Pinger) resolveSRV(host string) (string, uint16, error) {
+func resolveSRV(host string) (string, uint16, error) {
 	_, records, err := net.LookupSRV("minecraft", "tcp", host)
 	if err != nil {
 		var dnsError *net.DNSError
@@ -73,13 +82,15 @@ func (p *Pinger) resolveSRV(host string) (string, uint16, error) {
 			return "", 0, nil
 		}
 
-		return "", 0, err
+		return "", 0, fmt.Errorf("failed to resolve SRV records: %w", err)
 	}
 
 	if len(records) == 0 {
 		return "", 0, nil
 	}
+
 	target := records[0]
+
 	return target.Target, target.Port, nil
 }
 
@@ -91,5 +102,6 @@ func toAddrString(host string, port int) string {
 	if shouldWrapIPv6(host) {
 		return fmt.Sprintf(`[%s]:%d`, host, port)
 	}
+
 	return fmt.Sprintf(`%s:%d`, host, port)
 }

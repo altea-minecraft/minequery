@@ -189,5 +189,6 @@ func NewPinger(options ...PingerOption) *Pinger {
 	for _, configure := range options {
 		configure(pinger)
 	}
+
 	return pinger
 }
