@@ -24,7 +24,8 @@ var (
 		0x00, 0x0b,
 
 		// 'MC|PingHost' string as UTF-16BE
-		0x00, 0x4d, 0x00, 0x43, 0x00, 0x7c, 0x00, 0x50, 0x00, 0x69, 0x00, 0x6e, 0x00, 0x67, 0x00, 0x48, 0x00, 0x6f, 0x00, 0x73, 0x00, 0x74,
+		0x00, 0x4d, 0x00, 0x43, 0x00, 0x7c, 0x00, 0x50, 0x00, 0x69, 0x00,
+		0x6e, 0x00, 0x67, 0x00, 0x48, 0x00, 0x6f, 0x00, 0x73, 0x00, 0x74,
 	}
 	ping16ResponsePacketID byte = 0xff
 )
@@ -446,26 +447,29 @@ func Ping16(host string, port int) (*Status16, error) {
 // Ping16 pings 1.6 to 1.7 (exclusively) Minecraft servers (Notchian servers of more late versions also respond
 // to this ping packet.)
 func (p *Pinger) Ping16(host string, port int) (*Status16, error) {
-	status, err := p.pingGeneric(p.ping16, host, port)
+	status, err := p.pingGeneric(p.ping16SendReceivePing, host, port)
 	if err != nil {
 		return nil, err
 	}
-	return status.(*Status16), nil
+
+	return status.(*Status16), nil //nolint:forcetypeassert
 }
 
-func (p *Pinger) ping16(host string, port int) (interface{}, error) {
+func (p *Pinger) ping16SendReceivePing(host string, port int) (interface{}, error) {
 	conn, err := p.openTCPConn(host, port)
 	if err != nil {
 		return nil, err
 	}
+
 	defer func() { _ = conn.Close() }()
 
-	// Send ping packet
+	// Use default 1.6.2 protocol version by default
 	protocolVersion := p.ProtocolVersion16
 	if protocolVersion == 0 {
 		protocolVersion = Ping16ProtocolVersion162
 	}
-	if err = p.ping16WritePingPacket(conn, protocolVersion, host, port); err != nil {
+
+	if err = ping16WritePingPacket(conn, protocolVersion, host, port); err != nil {
 		return nil, fmt.Errorf("could not write ping packet: %w", err)
 	}
 
@@ -486,25 +490,23 @@ func (p *Pinger) ping16(host string, port int) (interface{}, error) {
 
 // Communication
 
-func (p *Pinger) ping16WritePingPacket(writer io.Writer, protocol byte, host string, port int) error {
+func ping16WritePingPacket(writer io.Writer, protocol byte, host string, port int) error {
 	// Allocate buffer with initial capacity of 64 which should be enough for most packets.
 	packet := bytes.NewBuffer(make([]byte, 0, 64))
 
 	// Write hardcoded (it doesn't change ever) packet header
-	packet.Write(ping16PingPacketHeader)
+	_, _ = packet.Write(ping16PingPacketHeader)
 
 	// Encode hostname to UTF16BE and store in buffer to calculate length further on
 	hb := &bytes.Buffer{}
-	if _, err := utf16BEEncoder.Writer(hb).Write([]byte(host)); err != nil {
-		return err
-	}
+	_, _ = utf16BEEncoder.Writer(hb).Write([]byte(host))
 
 	// Write packet length (7 + length of hostname string)
 	_ = binary.Write(packet, binary.BigEndian, uint16(7+hb.Len()))
 
 	// Get preferred protocol version and fallback to Ping16ProtocolVersion162 if not set
 	// and write it to packet
-	packet.WriteByte(protocol)
+	_ = packet.WriteByte(protocol)
 
 	// Write hostname string length
 	_ = binary.Write(packet, binary.BigEndian, uint16(len(host)))
@@ -516,7 +518,7 @@ func (p *Pinger) ping16WritePingPacket(writer io.Writer, protocol byte, host str
 	_ = binary.Write(packet, binary.BigEndian, uint32(port))
 
 	_, err := packet.WriteTo(writer)
-	return err
+	return fmt.Errorf("could not write ping packet: %w", err)
 }
 
 // Response processing
@@ -534,7 +536,12 @@ func (p *Pinger) ping16ParseResponsePayload(payload []byte) (*Status16, error) {
 	if len(fields) != 5 {
 		return nil, fmt.Errorf("%w: expected 5 status fields, got %d", ErrInvalidStatus, len(fields))
 	}
-	serverProtocolVersionString, serverVersion, motd, onlineString, maxString := fields[0], fields[1], fields[2], fields[3], fields[4]
+
+	serverProtocolVersionString := fields[0]
+	serverVersion := fields[1]
+	motd := fields[2]
+	onlineString := fields[3]
+	maxString := fields[4]
 
 	// Parse protocol version
 	serverProtocolVersion, err := strconv.ParseInt(serverProtocolVersionString, 10, 32)
@@ -549,7 +556,7 @@ func (p *Pinger) ping16ParseResponsePayload(payload []byte) (*Status16, error) {
 	}
 
 	// Parse max players
-	max, err := strconv.ParseInt(maxString, 10, 32)
+	maxPlayer, err := strconv.ParseInt(maxString, 10, 32)
 	if err != nil {
 		return nil, fmt.Errorf("%w: could not parse max players count: %s", ErrInvalidStatus, err)
 	}
@@ -559,6 +566,6 @@ func (p *Pinger) ping16ParseResponsePayload(payload []byte) (*Status16, error) {
 		ServerVersion:   serverVersion,
 		MOTD:            motd,
 		OnlinePlayers:   int(online),
-		MaxPlayers:      int(max),
+		MaxPlayers:      int(maxPlayer),
 	}, nil
 }
