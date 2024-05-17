@@ -59,7 +59,7 @@ func (p *Pinger) ping14(host string, port int) (interface{}, error) {
 	}
 
 	// Read status response (note: uses the same packet reading approach as 1.4)
-	payload, err := p.pingBeta18ReadResponsePacket(conn)
+	payload, err := pingBeta18ReadResponsePacket(conn)
 	if err != nil {
 		return nil, fmt.Errorf("could not read response packet: %w", err)
 	}

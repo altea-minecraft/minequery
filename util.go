@@ -32,9 +32,9 @@ func (s *stack) Pop() (interface{}, error) {
 func maxInt(a int, b int) int {
 	if a < b {
 		return b
-	} else {
-		return a
 	}
+
+	return a
 }
 
 // UnmarshalFunc is a function that conforms to json.Unmarshal function signature.

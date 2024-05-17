@@ -474,7 +474,7 @@ func (p *Pinger) ping16SendReceivePing(host string, port int) (interface{}, erro
 	}
 
 	// Read status response (note: uses the same packet reading approach as 1.4)
-	payload, err := p.pingBeta18ReadResponsePacket(conn)
+	payload, err := pingBeta18ReadResponsePacket(conn)
 	if err != nil {
 		return nil, fmt.Errorf("could not read response packet: %w", err)
 	}
@@ -518,6 +518,7 @@ func ping16WritePingPacket(writer io.Writer, protocol byte, host string, port in
 	_ = binary.Write(packet, binary.BigEndian, uint32(port))
 
 	_, err := packet.WriteTo(writer)
+
 	return fmt.Errorf("could not write ping packet: %w", err)
 }
 
@@ -533,15 +534,16 @@ func (p *Pinger) ping16ParseResponsePayload(payload []byte) (*Status16, error) {
 
 	// Split status string, parse and map to struct returning errors if conversions fail
 	fields := strings.Split(string(payload), ping16ResponseFieldSeparator)
-	if len(fields) != 5 {
+	if len(fields) != 5 { //nolint:revive
 		return nil, fmt.Errorf("%w: expected 5 status fields, got %d", ErrInvalidStatus, len(fields))
 	}
 
+	// In 1.6 status payload has these fields separated by 00 00
 	serverProtocolVersionString := fields[0]
 	serverVersion := fields[1]
 	motd := fields[2]
-	onlineString := fields[3]
-	maxString := fields[4]
+	onlineString := fields[3] //nolint:revive
+	maxString := fields[4]    //nolint:revive
 
 	// Parse protocol version
 	serverProtocolVersion, err := strconv.ParseInt(serverProtocolVersionString, 10, 32)
