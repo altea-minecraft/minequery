@@ -548,19 +548,19 @@ func (p *Pinger) ping16ParseResponsePayload(payload []byte) (*Status16, error) {
 	// Parse protocol version
 	serverProtocolVersion, err := strconv.ParseInt(serverProtocolVersionString, 10, 32)
 	if err != nil {
-		return nil, fmt.Errorf("%w: could not parse protocol version: %s", ErrInvalidStatus, err)
+		return nil, fmt.Errorf("%w: could not parse protocol version: %s", ErrInvalidStatus, err) //nolint:errorlint
 	}
 
 	// Parse online players
 	online, err := strconv.ParseInt(onlineString, 10, 32)
 	if err != nil {
-		return nil, fmt.Errorf("%w: could not parse online players count: %s", ErrInvalidStatus, err)
+		return nil, fmt.Errorf("%w: could not parse online players count: %s", ErrInvalidStatus, err) //nolint:errorlint
 	}
 
 	// Parse max players
 	maxPlayer, err := strconv.ParseInt(maxString, 10, 32)
 	if err != nil {
-		return nil, fmt.Errorf("%w: could not parse max players count: %s", ErrInvalidStatus, err)
+		return nil, fmt.Errorf("%w: could not parse max players count: %s", ErrInvalidStatus, err) //nolint:errorlint
 	}
 
 	return &Status16{

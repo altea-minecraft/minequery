@@ -39,22 +39,24 @@ func Ping14(host string, port int) (*Status14, error) {
 // Ping14 pings 1.4 to 1.6 (exclusively) Minecraft servers (Notchian servers of more late versions also respond to
 // this ping packet.)
 func (p *Pinger) Ping14(host string, port int) (*Status14, error) {
-	status, err := p.pingGeneric(p.ping14, host, port)
+	status, err := p.pingGeneric(p.ping14SendReceivePing, host, port)
 	if err != nil {
 		return nil, err
 	}
-	return status.(*Status14), nil
+
+	return status.(*Status14), nil //nolint:forcetypeassert
 }
 
-func (p *Pinger) ping14(host string, port int) (interface{}, error) {
+func (p *Pinger) ping14SendReceivePing(host string, port int) (interface{}, error) {
 	conn, err := p.openTCPConn(host, port)
 	if err != nil {
 		return nil, err
 	}
+
 	defer func() { _ = conn.Close() }()
 
 	// Send ping packet
-	if err = p.ping14WritePingPacket(conn); err != nil {
+	if err = ping14WritePingPacket(conn); err != nil {
 		return nil, fmt.Errorf("could not write ping packet: %w", err)
 	}
 
@@ -75,10 +77,10 @@ func (p *Pinger) ping14(host string, port int) (interface{}, error) {
 
 // Communication
 
-func (p *Pinger) ping14WritePingPacket(writer io.Writer) error {
+func ping14WritePingPacket(writer io.Writer) error {
 	// Write 2-byte FE 01 ping packet
 	_, err := writer.Write(ping14PingPacket)
-	return err
+	return fmt.Errorf("could not write ping packet: %w", err)
 }
 
 // Response processing
@@ -94,8 +96,9 @@ func (p *Pinger) ping14ParseResponsePayload(payload []byte) (*Status14, error) {
 
 		res, err := p.ping16ParseResponsePayload(payload)
 		if err != nil {
-			return nil, fmt.Errorf("could not parse status from response packet: %w", err)
+			return nil, err
 		}
+
 		return &Status14{
 			MOTD:          res.MOTD,
 			OnlinePlayers: res.OnlinePlayers,
@@ -105,10 +108,13 @@ func (p *Pinger) ping14ParseResponsePayload(payload []byte) (*Status14, error) {
 
 	// Split status string, parse and map to struct returning errors if conversions fail
 	fields := strings.Split(string(payload), ping14ResponsePayloadFieldSeparator)
-	if len(fields) != 3 {
+	if len(fields) != 3 { //nolint:revive
 		return nil, fmt.Errorf("%w: expected 3 status fields, got %d", ErrInvalidStatus, len(fields))
 	}
-	motd, onlineString, maxString := fields[0], fields[1], fields[2]
+
+	motd := fields[0]
+	onlineString := fields[1]
+	maxString := fields[2]
 
 	// Parse online players
 	online, err := strconv.ParseInt(onlineString, 10, 32)
@@ -117,7 +123,7 @@ func (p *Pinger) ping14ParseResponsePayload(payload []byte) (*Status14, error) {
 	}
 
 	// Parse max players
-	max, err := strconv.ParseInt(maxString, 10, 32)
+	maxPlayers, err := strconv.ParseInt(maxString, 10, 32)
 	if err != nil {
 		return nil, fmt.Errorf("%w: could not parse max players count: %s", ErrInvalidStatus, err)
 	}
@@ -125,6 +131,6 @@ func (p *Pinger) ping14ParseResponsePayload(payload []byte) (*Status14, error) {
 	return &Status14{
 		MOTD:          motd,
 		OnlinePlayers: int(online),
-		MaxPlayers:    int(max),
+		MaxPlayers:    int(maxPlayers),
 	}, nil
 }

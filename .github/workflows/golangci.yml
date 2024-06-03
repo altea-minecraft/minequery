@@ -19,7 +19,7 @@ jobs:
           - { version: 1.13 }
           - { version: 1.22 }
           - { version: stable }
-          
+    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
